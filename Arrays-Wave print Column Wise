@@ -1,0 +1,34 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int m=sc.nextInt();
+		int n=sc.nextInt();
+		int[][] A=new int[m][n];
+		for(int i=0;i<A.length;i++)
+		{
+			for(int j=0;j<A[0].length;j++)
+			{
+				A[i][j]=sc.nextInt();
+			}
+		}
+        for(int i=0;i<A[0].length;i++)
+        {
+            if(i%2==0)
+            {
+                for(int j=0;j<A.length;j++)
+                {
+                    System.out.print(A[j][i]+", ");
+                }
+            }
+            else
+            {
+                for(int j=A.length-1;j>=0;j--)
+                {
+                    System.out.print(A[j][i]+", ");
+                }
+            }
+        }
+        System.out.print("END");
+    }
+}
