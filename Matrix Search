@@ -1,0 +1,46 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int [][]A=new int[n][m];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                A[i][j]=sc.nextInt();
+            }
+        }
+        int x=sc.nextInt();
+        if(search(A,x))
+        {
+            System.out.print(1);
+        }
+        else
+        {
+            System.out.print(0);
+        }
+    }
+    public static boolean search(int [][]A,int x)
+    {
+        
+        int c=A[0].length-1;
+        int r=0;
+        while(r<A.length && c>=0){
+        if(A[r][c]==x)
+        {
+            return true;
+        }
+        if(A[r][c]>x)
+        {
+            c--;
+        }
+        if(A[r][c]<x)
+        {
+            r++;
+        }
+        }
+        return false;
+    }
+}
