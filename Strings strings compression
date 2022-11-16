@@ -1,0 +1,34 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int count=1;
+        String snew="";  
+        for(int i=0; i<s.length(); i++){
+        if(i==s.length()-1){         
+            snew+=s.charAt(i)+""+count;
+            break;
+        }
+        if(s.charAt(i)==s.charAt(i+1)){   
+            count++;
+        }
+        else{                       
+            snew+=s.charAt(i)+""+count;
+            count=1;     
+        }
+   }
+   String snews="";
+   for(int i=0;i<snew.length();i++)
+   {
+       if(snew.charAt(i)=='1')
+       {
+           continue;
+       }
+       else{
+           snews+=snew.charAt(i);
+       }
+   }
+        System.out.print(snews);
+    }
+}
