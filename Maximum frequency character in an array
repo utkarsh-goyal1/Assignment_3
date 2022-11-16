@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner (System.in);
+        String s=sc.nextLine();
+        char []B={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        int []A=new int[26];
+        for(int i=0;i<s.length();i++)
+        {
+            A[s.charAt(i)-'a']++;
+        }
+        int c=max(A);
+        System.out.print(B[c]);
+        
+    }
+    public static int max(int []A)
+    {
+        int max=0;
+        for(int i=0;i<A.length;i++)
+        {
+            if(A[i]>A[max])
+            {
+                max=i;
+            }
+        }
+        return max;
+    }
+}
