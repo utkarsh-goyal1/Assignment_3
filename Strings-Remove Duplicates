@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        char [] str=s.toCharArray();
+        remove(str);
+    }
+    public static void remove(char []S)
+    {
+        int n=S.length;
+        int j=0;
+        for(int i=1;i<n;i++)
+        {
+            if(S[j]!=S[i])
+            {
+                j++;
+                S[j]=S[i];
+            }
+        }
+        System.out.print(Arrays.copyOfRange(S,0,j+1));
+    }
+}
