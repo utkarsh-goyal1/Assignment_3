@@ -1,0 +1,39 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+        int c=0;
+        for(int i=0;i<s.length();i++)
+        {
+            for(int j=i+1;j<=s.length();j++)
+            {
+                String sn=s.substring(i,j);
+                if(isPalindrome(sn)==1)
+                {
+                    c++;
+                }
+            }
+        }
+        System.out.print(c);
+        
+    }
+    public static int isPalindrome(String s)
+    {
+        String snew="";
+		char a;
+		for(int i=s.length()-1;i>=0;i--)
+		{
+			a=s.charAt(i);
+			snew=snew+a;
+		}
+		if(s.equals(snew)) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+    }
+    
+    
+}
